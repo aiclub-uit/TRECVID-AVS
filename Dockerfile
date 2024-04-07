@@ -7,6 +7,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/open-mmlab/mmdetection.git /TRECVID \
+RUN git clone https://github.com/aiclub-uit/TRECVID-AVS
     && cd /TRECVID \
     && pip install -r requirements.txt
+
+WORKDIR /TRECVID
