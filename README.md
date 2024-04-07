@@ -54,7 +54,8 @@ python index_faiss.py \
 ```bash
 python retrieve.py \
     --path-faiss ../IndexDatabases/databases/clip/ 
-    --query <query_to_retrieve>
     --path-frame <path_saved_extracted_frames>
+    --query <query_to_retrieve>
+    --num-retrieve <number_results>
     --save-path <path_to_save_ranking_results>
 ```

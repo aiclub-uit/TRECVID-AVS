@@ -47,6 +47,8 @@ if __name__ == "__main__":
             video_id = str(row["video_id"]).zfill(5)
             frame_id = str(row["frame_id"]).zfill(6)
             shot_id = str(row["shot_id"])
+
+            # this is NOT shot_id
             shot_id_per_video = str(row["shot_id_per_video"])
 
             # copy to results folder for visualization

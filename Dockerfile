@@ -7,7 +7,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/aiclub-uit/TRECVID-AVS \
+RUN git clone https://github.com/aiclub-uit/TRECVID-AVS /TRECVID \
     && cd /TRECVID \
     && pip install -r requirements.txt
 
