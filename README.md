@@ -1,3 +1,5 @@
+![Pipeline](./assets/pipeline_trecvid.png)
+
 ## Setup Enviroment
 
 ```bash
@@ -25,12 +27,23 @@ python extract.py \
     --video-dir <path_video_folder> \
     --msb-dir <path_master_shot_folder> \
     --skip-frame <frequency_frame_extraction> \
-    --start <id_video_end> \
-    --end <id_video_end> \
+    --start <id_start_video> \
+    --end <id_end_video> \
     --path-save <path_to_save_extracted_frames> \
 ```
 
+```bash
+extracted_shot/
+|-- done.txt # list extracted videos
+`-- keyframes
+    |-- 07476
+    |-- 07477
+    |-- 07499
+```
+
 #### Step 2: Encode features
+
+We used CLIP ViT-L/14@336p to extract image features from extracted frames from videos.
 
 ```bash
 cd /TRECVID/ExtractFeatures
@@ -41,6 +54,8 @@ python clip_model.py \
 
 #### Step 3: Index to Faiss
 
+Extracted image features are then indexed to Faiss vector database for later retrieval.
+
 ```bash
 cd /TRECVID/IndexDatabases
 python index_faiss.py \
@@ -50,6 +65,8 @@ python index_faiss.py \
 ```
 
 #### Step 4: Retrieve
+
+The text features of input query are extracted and searched in the Faiss vector database.
 
 ```bash
 cd /TRECVID/Retrieve
