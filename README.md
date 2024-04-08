@@ -32,6 +32,8 @@ python extract.py \
     --path-save <path_to_save_extracted_frames> \
 ```
 
+The folder structure of extracted frames:
+
 ```bash
 extracted_shot/
 |-- done.txt # list extracted videos

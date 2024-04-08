@@ -1,8 +1,4 @@
 *.npy
-*.jpg
-*.png
 *.bin
 *.csv
 *.txt
-
-!assets
