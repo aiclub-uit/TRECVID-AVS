@@ -17,7 +17,7 @@ docker run -it -v <mount_data_to_container> \
 
 Now you are in Docker containers.
 
-### Extract frames
+#### Step 1: Extract frames
 
 ```bash
 cd /TRECVID/ExtractFrames
@@ -30,7 +30,7 @@ python extract.py \
     --path-save <path_to_save_extracted_frames> \
 ```
 
-### Encode features
+#### Step 2: Encode features
 
 ```bash
 cd /TRECVID/ExtractFeatures
@@ -39,7 +39,7 @@ python clip_model.py \
     --path-save <path_to_save_features>
 ```
 
-### Index to Faiss
+#### Step 3: Index to Faiss
 
 ```bash
 cd /TRECVID/IndexDatabases
@@ -49,9 +49,10 @@ python index_faiss.py \
     --path-save <path_to_save_faiss_data>
 ```
 
-### Retrieve
+#### Step 4: Retrieve
 
 ```bash
+cd /TRECVID/Retrieve
 python retrieve.py \
     --path-faiss <path_saved_faiss_data> \
     --path-frame <path_saved_extracted_frames> \
